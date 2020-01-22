@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public float speed = 5.0f;
+	Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey("a"))
-        {
-            Debug.Log("Left-A");
-        }
-        if (Input.GetKey("b"))
-        {
-            Debug.Log("Right-A");
-        }
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+	}
+
+	// Update is called once per frame
+	void FixedUpdate()
+	{
+		float x = Input.GetAxis("Horizontal") * speed;
+		float z = Input.GetAxis("Vertical") * speed;
+		rb.AddForce(x, 0, z);
+	}
 }
