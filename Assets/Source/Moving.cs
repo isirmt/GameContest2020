@@ -13,6 +13,13 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("a"))
+        {
+            Debug.Log("Left-A");
+        }
+        if (Input.GetKey("b"))
+        {
+            Debug.Log("Right-A");
+        }
     }
 }
